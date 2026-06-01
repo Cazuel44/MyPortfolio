@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rodrigo Portfolio
 
-## Getting Started
+Portfolio frontend desarrollado con Next.js 15 inspirado visualmente en el universo de Naruto.  
+Construido con arquitectura escalable orientada a componentes, separación de responsabilidades y tipado fuerte con TypeScript.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Tecnologías utilizadas
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Fetch API
+- React Icons
+
+---
+
+# Arquitectura aplicada
+
+## Services Layer
+
+La lógica de consumo de API se centraliza en `narutoApi.ts`.  
+Cada función tiene una responsabilidad específica:
+
+- `getNarutoCharacterById` — retorna data resumida para cards y carrusel.
+- `getNarutoCharacterDetailById` — retorna data completa para la vista de detalle.
+
+Esto evita overfetching y mantiene la UI desacoplada de la lógica de negocio.
+
+---
+
+## Type Safety con TypeScript
+
+Se implementó tipado fuerte mediante archivos centralizados en `/types`.
+
+El proyecto utiliza distintos modelos de datos dependiendo del contexto de uso:
+
+- `CharacterCardProps`
+- `CharacterDetailCardProps`
+- `ContactRequestBody`
+- `iconicCharactersArray`
+
+Esto permite:
+
+- evitar inconsistencias de datos
+- mejorar autocomplete
+- reducir errores en tiempo de desarrollo
+- documentar implícitamente la estructura de la aplicación
+
+### Tipados combinados y composición de tipos
+
+El proyecto también utiliza composición de tipos para extender modelos reutilizables sin duplicar estructuras.
+
+Ejemplo:
+
+```ts
+export type NarutoCharacterDetailProps = CharacterDetailCardProps & {
+    gif?: string;
+};
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Manejo defensivo de datos opcionales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+La API externa no garantiza que todos los personajes tengan la misma estructura de datos.
+Por esta razón se utilizan propiedades opcionales (`?`) en múltiples tipos:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```ts
+images?: string[];
+clan?: string | string[];
+```
 
-## Learn More
+## Buenas prácticas aplicadas
+- Separación de responsabilidades
+- Services desacoplados
+- Tipado fuerte
+- Manejo defensivo de datos opcionales
+- Componentes reutilizables
+- Arquitectura escalable
+- Modelo híbrido Server/Client Components
+- UI desacoplada de la data
+- Sin overfetching
+- Controlled Components
+- Estandarización visual
+- Configuración externa de contenido
 
-To learn more about Next.js, take a look at the following resources:
+## Sistema de contacto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+El portfolio incluye un formulario funcional de contacto implementado con:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- API Routes de Next.js
+- Nodemailer
+- Variables de entorno (.env.local)
+- Formularios controlados con React
+- Tipado compartido cliente/servidor mediante TypeScript
 
-## Deploy on Vercel
+El envío de correos se realiza desde el servidor para mantener seguras las credenciales SMTP.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Server & Client Components
+
+El proyecto utiliza el modelo híbrido de rendering de Next.js 15.
+
+### Server Components
+
+Las páginas principales realizan fetch de datos directamente en el servidor:
+
+- `AboutMePage`
+- `NarutoDetailPage`
+
+Esto reduce JavaScript enviado al cliente y mejora rendimiento.
+
+### Client Components
+
+Los componentes interactivos utilizan `"use client"`:
+
+- `NarutoCarrousel`
+- `ContactForm`
+- `ContactModal`
+
+Estos manejan estado local e interacciones mediante hooks de React.
+
+---
+
+## Protección anti-spam
+
+El formulario de contacto implementa múltiples capas de protección:
+
+- Honeypot invisible anti-bots
+- Rate limiting mediante Upstash Redis
+- Validación de campos en servidor
+- Variables de entorno protegidas
+- Envío seguro mediante Nodemailer
+
+Esto reduce spam automatizado y abuso del endpoint de contacto.
+
+
