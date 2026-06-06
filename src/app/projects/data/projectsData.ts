@@ -36,7 +36,7 @@ export const projects: Project[] = [
 
 
         tasks: [
-            "Refactorización de la página Home eliminando accesos no requeridos.",
+            "Refactorización de la página Home.",
             "Integración de BetterAuth para autenticación de usuarios.",
             "Adaptación de servicios existentes al flujo de autenticación.",
             "Creación de Provider global para manejo de sesión.",
@@ -44,8 +44,8 @@ export const projects: Project[] = [
             "Modificación del Sidebar para incorporar nuevas secciones.",
             "Creación de vistas protegidas para Users, Professionals y Services.",
             "Desarrollo del componente UserList con búsqueda y filtrado.",
-            "Refactorización de DataList para soportar múltiples entidades.",
-            "Implementación de formularios modales para creación de usuarios.",
+            "Refactorización de DataList para mostrar distintos tipos de información.",
+            "Implementación de formularios modal para creación de usuarios.",
             "Implementación de actualización y eliminación de usuarios.",
             "Organización de la estructura de servicios y componentes.",
             "Creación de datos de prueba para visualización de Payments, Contracts, Users y Services.",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
             "Integración de capa de servicios utilizando React Query para manejo de estado del servidor en distintas vistas del sistema.",
             "Optimización de actualización de datos mediante QueryClient.",
         ],
-        keyLearning: "Aprendí a integrar sistemas de autenticación modernos utilizando TypeScript y a trabajar sobre una base de código existente dentro de un equipo."
+        keyLearning: "Fue mi primera experiencia colaborando en un proyecto real, trabajando sobre una base de código y un template. Aprendí a comprender código desarrollado por otros programadores, integrar autenticación, consumir APIs externas y desarrollar nuevas funcionalidades manteniendo la arquitectura."
     },
     {
         slug: "backend-repositorio-privado",
@@ -88,14 +88,13 @@ export const projects: Project[] = [
             "Diseño e implementación de una clase BaseRepository genérica utilizando TypeScript.",
             "Implementación de métodos Find y FindMany para consultas reutilizables y tipadas.",
             "Desarrollo de operaciones Update y Delete dentro de una arquitectura de repositorio.",
-            "Implementación de patrones de diseño orientados a la reutilización de lógica de acceso a datos.",
-            "Uso de TypeScript Generics para construir una capa de abstracción agnóstica a tablas.",
+            "Creación de una clase base reutilizable para evitar duplicar lógica de acceso a datos.",
+            "Uso de TypeScript Generics para reutilizar la misma lógica CRUD en diferentes tablas de la base de datos.",
             "Integración con schemas compartidos para validación y tipado de entidades.",
             "Ejecución de scripts SQL en PostgreSQL para mantenimiento y actualización de datos.",
             "Ejecución de modificaciones de datos en base de datos mediante DBeaver.",
             "Actualización controlada de registros como nombres, correos electrónicos, direcciones y teléfonos.",
             "Aplicación de buenas prácticas de arquitectura backend separando lógica de acceso a datos.",
-            "Validación de consistencia de datos luego de ejecución de scripts SQL."
         ],
 
         codeSections: [
