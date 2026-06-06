@@ -51,6 +51,7 @@ export const projects: Project[] = [
             "Creación de datos de prueba para visualización de Payments, Contracts, Users y Services.",
             "Implementación de listas reutilizables para distintas entidades.",
             "Implementación de TanStack Query para gestión de estado del servidor.",
+            "Integración de API externa de tasas de cambio en tiempo real para visualización dinámica del valor de divisas.",
             "Desarrollo de hooks personalizados para consultas y mutaciones.",
             "Configuración de invalidación automática de caché tras operaciones CRUD.",
             "Integración de capa de servicios utilizando React Query para manejo de estado del servidor en distintas vistas del sistema.",
