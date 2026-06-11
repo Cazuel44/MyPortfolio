@@ -161,14 +161,24 @@ const ProjectPage = async ({ params }: Props) => {
                 )}
 
                 {/* Galería */}
-                {project.images && project.images.length > 0 && (
+                {(!project.codeSections || project.codeSections.length === 0) &&
+                    project.images &&
+                    project.images.length > 0 && (
+                        <ContentCard>
+                            <ProjectGallery
+                                images={project.images}
+                                title={project.title}
+                            />
+                        </ContentCard>
+                    )}
+                {/* {project.images && project.images.length > 0 && (  !!muestra el carrusel siempre y se repite la imagen!!!!
                     <ContentCard>
                         <ProjectGallery
                             images={project.images}
                             title={project.title}
                         />
                     </ContentCard>
-                )}
+                )} */}
 
                 {/* Capturas técnicas */}
                 {project.codeSections && (

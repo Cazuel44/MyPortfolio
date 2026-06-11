@@ -126,4 +126,84 @@ export const projects: Project[] = [
         ],
         keyLearning: "Fue mi primera experiencia trabajando con Repository Pattern, PostgreSQL, DBeaver y TypeScript Generics en un entorno profesional."
     },
+    {
+        slug: "backend-ecommerce",
+
+        title: "Backend Ecommerce",
+
+        shortDescription:"API REST para la gestión de usuarios, productos y carritos, desarrollada con Node.js, Express y MongoDB.",
+
+        images: ["/images/backend1.png",],
+
+        projectType: "Proyecto Académico",
+
+        role: "Backend Developer",
+
+        team: "Individual",
+
+        technologies: [
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Mongoose",
+            "Passport",
+            "JWT",
+            "Swagger",
+            "Handlebars",
+            "Nodemailer",
+            "Multer",
+            "Mocha",
+            "Chai",
+            "Supertest"
+        ],
+
+        challenge:
+            "Desarrollar una API completa para ecommerce aplicando autenticación, persistencia de datos, documentación y una arquitectura organizada que permitiera escalar y mantener el proyecto de forma eficiente.",
+
+        tasks: [
+            "Desarrollo de API REST para gestión de usuarios, productos y carritos.",
+            "Implementación de operaciones CRUD para distintas entidades.",
+            "Modelado de datos utilizando MongoDB y Mongoose.",
+            "Implementación de autenticación mediante Passport y JWT.",
+            "Integración de inicio de sesión con GitHub OAuth.",
+            "Protección de rutas mediante estrategias de autenticación.",
+            "Implementación de manejo de cookies para sesiones autenticadas.",
+            "Desarrollo de vistas dinámicas utilizando Handlebars.",
+            "Integración de envío de correos electrónicos con Nodemailer.",
+            "Implementación de carga de archivos utilizando Multer.",
+            "Creación de documentación interactiva con Swagger.",
+            "Implementación de Factory Pattern para persistencia configurable.",
+            "Organización del proyecto utilizando arquitectura por capas.",
+            "Desarrollo de pruebas automatizadas con Mocha, Chai y Supertest."
+        ],
+
+        codeSections: [
+            {
+                title: "Arquitectura por Capas",
+                description:
+                    "Organización del proyecto separando rutas, controladores, modelos, configuración y utilidades para mantener una estructura clara y escalable.",
+                images: ["/images/backend2.png"]
+            },
+            {
+                title: "Documentación de API con Swagger",
+                description:
+                    "Implementación de documentación interactiva para visualizar y probar los distintos endpoints de la aplicación desde el navegador.",
+                images: ["/images/backend1.png"]
+            },
+            {
+                title: "Autenticación con GitHub y JWT",
+                description:
+                    "Configuración de Passport para autenticación mediante GitHub OAuth y generación de tokens JWT para proteger rutas y validar usuarios.",
+                images: ["/images/backend3.png"]
+            },
+            {
+                title: "Factory Pattern para Persistencia",
+                description:
+                    "Implementación de una capa de persistencia configurable que permite utilizar MongoDB o almacenamiento en memoria sin modificar la lógica de negocio.",
+                images: ["/images/backend4.png"]
+            }
+        ],
+
+        keyLearning: "Este proyecto me permitió profundizar en el desarrollo backend con Node.js y Express. Aprendí a trabajar con autenticación mediante Passport y JWT, documentar APIs con Swagger, implementar patrones de diseño como Factory Pattern y estructurar aplicaciones siguiendo una arquitectura por capas."
+    }
 ];
