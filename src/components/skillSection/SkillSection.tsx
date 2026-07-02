@@ -1,4 +1,4 @@
-import { skills } from "@/app/skills/data/skills";
+import { skillGroups } from "@/app/skills/data/skills";
 import { ContentCard } from "@/components/cards/ContentCard";
 
 export const SkillsSection = () => {
@@ -14,26 +14,44 @@ export const SkillsSection = () => {
                     Tecnologías
                 </h2>
 
-                <div className="flex flex-wrap gap-5">
-                    {skills.map((skill) => (
-                        <ContentCard
-                            key={skill.label}
-                            className="w-[190px] p-5 hover:border-orange-400/30 hover:bg-zinc-900/60 transition-all duration-300 cursor-default group"
-                        >
-                            <div className="flex items-center gap-3 mb-4">
-                                <skill.icon
-                                    className={`text-2xl ${skill.color} group-hover:scale-110 transition`}
-                                />
+                <div className="space-y-10">
+                    {skillGroups.map((group) => (
+                        <div key={group.title}>
 
-                                <span className="font-semibold text-zinc-100">
-                                    {skill.label}
-                                </span>
+                            {/* Título de la categoría */}
+                            <div className="flex items-center gap-4 mb-5">
+                                <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-300">
+                                    {group.title}
+                                </h3>
+
+                                <div className="flex-1 h-px bg-orange-500/20" />
                             </div>
 
-                            <span className="inline-block text-xs px-2 py-1 rounded-full bg-zinc-800 text-orange-300 border border-orange-500/20">
-                                {skill.level}
-                            </span>
-                        </ContentCard>
+                            {/* Skills */}
+                            <div className="flex flex-wrap gap-5">
+                                {group.skills.map((skill) => (
+                                    <ContentCard
+                                        key={skill.id}
+                                        className="w-[190px] p-5 hover:border-orange-400/30 hover:bg-zinc-900/60 transition-all duration-300 cursor-default group"
+                                    >
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <skill.icon
+                                                className={`text-2xl ${skill.color} group-hover:scale-110 transition`}
+                                            />
+
+                                            <span className="font-semibold text-zinc-100">
+                                                {skill.label}
+                                            </span>
+                                        </div>
+
+                                        <span className="inline-block text-xs px-2 py-1 rounded-full bg-zinc-800 text-orange-300 border border-orange-500/20">
+                                            {skill.level}
+                                        </span>
+                                    </ContentCard>
+                                ))}
+                            </div>
+
+                        </div>
                     ))}
                 </div>
             </div>

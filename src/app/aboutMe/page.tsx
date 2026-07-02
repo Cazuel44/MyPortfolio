@@ -89,7 +89,8 @@ const AboutMePage = async () => {
                         <img
                             src="/images/narutoWallpaper.jpg"
                             alt="Naruto Wallpaper"
-                            className="w-full h-[400px] object-cover"
+                            className="w-full h-[400px] object-cover object-[center_97%]"
+                           
                         />
 
                     </div>
