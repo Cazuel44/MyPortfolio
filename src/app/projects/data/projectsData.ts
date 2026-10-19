@@ -2,6 +2,86 @@ import { Project } from "@/types/projects";
 
 export const projects: Project[] = [
     {
+        slug: "backend-airbnb",
+
+        title: "Airbnb API",
+
+        shortDescription:
+            "API REST para la gestión de usuarios, propiedades y reservas, desarrollada con Node.js, TypeScript, Express y MongoDB.",
+
+        images: ["/images/airbnb1.png"],
+
+        projectType: "Proyecto Personal",
+
+        role: "Backend Developer",
+
+        team: "Individual",
+
+        technologies: [
+            "Node.js",
+            "TypeScript",
+            "Express 5",
+            "MongoDB",
+            "Mongoose",
+            "Zod",
+            "JWT",
+            "bcrypt",
+            "Swagger",
+            "Vitest"
+        ],
+
+        challenge:
+            "Desarrollar una API de reservas de propiedades con autenticación, autorización, validación de datos y control de disponibilidad, aplicando una arquitectura por capas y buenas prácticas de desarrollo backend.",
+
+        tasks: [
+            "Desarrollo de API REST para usuarios, propiedades y reservas.",
+            "Implementación de operaciones CRUD para usuarios y propiedades.",
+            "Modelado de datos utilizando MongoDB y Mongoose.",
+            "Implementación de autenticación mediante JWT.",
+            "Hash de contraseñas utilizando bcrypt.",
+            "Protección de rutas mediante middleware de autenticación.",
+            "Autorización basada en roles y propiedad de los recursos.",
+            "Validación de datos mediante schemas de Zod.",
+            "Gestión de reservas con cálculo automático del precio total.",
+            "Validación de fechas y prevención de reservas solapadas.",
+            "Implementación de cancelación y actualización de reservas.",
+            "Manejo centralizado de errores mediante middleware.",
+            "Documentación interactiva de endpoints con Swagger.",
+            "Desarrollo de tests automatizados con Vitest.",
+            "Despliegue del backend en Render y conexión con MongoDB Atlas."
+        ],
+
+        codeSections: [
+            {
+                title: "Arquitectura por Capas",
+                description:
+                    "Organización del backend en rutas, middlewares, controladores, servicios y modelos para separar responsabilidades y facilitar el mantenimiento.",
+                images: ["/images/airbnb1.png"]
+            },
+            {
+                title: "Autenticación y Autorización",
+                description:
+                    "Implementación de JWT, protección de rutas y control de permisos según el rol del usuario y la propiedad de los recursos.",
+                images: ["/images/airbnb2.png"]
+            },
+            {
+                title: "Documentación con swagger",
+                description:
+                    "Validación de fechas, prevención de solapamientos y cálculo automático del precio según la cantidad de noches.",
+                images: ["/images/airbnb3.png"]
+            },
+            {
+                title: "Testing",
+                description:
+                    "Pruebas automatizadas con Vitest para verificar el comportamiento de la API.",
+                images: ["/images/airbnb4.png"]
+            }
+        ],
+
+        keyLearning:
+            "Este proyecto me permitió profundizar en el desarrollo backend con Node.js y TypeScript, reforzando mis conocimientos de autenticación JWT, autorización, validación con Zod, gestión de reservas, pruebas automatizadas y despliegue de APIs."
+    },
+    {
         slug: "exchango",
 
         title: "ExchanGo",
@@ -131,7 +211,7 @@ export const projects: Project[] = [
 
         title: "Backend Ecommerce",
 
-        shortDescription:"API REST para la gestión de usuarios, productos y carritos, desarrollada con Node.js, Express y MongoDB.",
+        shortDescription: "API REST para la gestión de usuarios, productos y carritos, desarrollada con Node.js, Express y MongoDB.",
 
         images: ["/images/backend1.png",],
 
